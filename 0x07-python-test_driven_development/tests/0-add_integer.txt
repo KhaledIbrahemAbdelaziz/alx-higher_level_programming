@@ -111,12 +111,12 @@ And again with NaN values
 
 ::
 
-    >>> add_integer(float('nan'))
+    >>> add_integer(float('NaN'))
     Traceback (most recent call last):
     ValueError: can't convert float NaN to integer
 
 ::
 
-    >>> add_integer(2, float('nan'))
+    >>> add_integer(2, float('NaN'))
     Traceback (most recent call last):
     ValueError:  can't convert float NaN to integer
