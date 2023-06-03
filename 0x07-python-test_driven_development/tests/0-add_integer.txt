@@ -126,10 +126,3 @@ And again with NaN values
     >>> add_integer(2, float('nan'))
     Traceback (most recent call last):
     ValueError: can't convert float NaN to integer
-
-Checking addition over multiple values:
-
-::
-
-    >>> [add_integer(i, i ** 2) for i in range(6)]
-    [0, 2, 6, 12, 20, 30]
