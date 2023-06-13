@@ -13,5 +13,6 @@ def pascal_triangle(n):
         return p
     for i in range(n):
         p.append(row)
-        row = [l+r for l, r in zip(row + tmp, tmp + row)]
+        row = [l+r 
+            for l, r in zip(row + tmp, tmp + row)]
     return p
