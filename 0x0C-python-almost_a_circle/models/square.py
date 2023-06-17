@@ -60,6 +60,15 @@ class Square(Rectangle):
                 elif k == "y":
                     self.y = h
 
+    def to_dictionary(self):
+        """returns the dictionary representation of a Square"""
+        return {
+                "id": self.id,
+                "size": self.width,
+                "x": self.x,
+                "y": self.y
+                }
+
     def __str__(self):
         """return [Square] (<id>) <x>/<y> - <size>"""
         return "[Square] ({}) {}/{} - {}".format(self.id, 
