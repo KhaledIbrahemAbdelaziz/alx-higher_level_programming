@@ -10,7 +10,6 @@ class Base:
     private class attribute:
     __nb_objects = 0 (int): the number of instances.
     """
-    
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -41,8 +40,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """writes the JSON string representation 
-        of list_objs 
-        to a file
+        of list_objs to a file
         
         Args:
             list_objs (list): A list of inherited Base instances.
