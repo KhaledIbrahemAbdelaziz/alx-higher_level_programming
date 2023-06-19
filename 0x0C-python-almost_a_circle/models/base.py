@@ -14,7 +14,11 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """class constructor"""
+        """class constructor
+
+        Args:
+        id (int): The identity of the new Base.
+        """
         if id is not None:
             self.id = id
         else:
@@ -24,7 +28,11 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """ returns the JSON string representation 
-        of list_dictionaries"""
+        of list_dictionaries
+
+        Args:
+            list_dictionaries (list): A list of dictionaries.
+            """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         else:
@@ -34,7 +42,11 @@ class Base:
     def save_to_file(cls, list_objs):
         """writes the JSON string representation 
         of list_objs 
-        to a file"""
+        to a file
+        
+        Args:
+            list_objs (list): A list of inherited Base instances.
+            """
         filename = cls.__name__ + ".json"
         with open(filename, "w") as j:
             if list_objs is None:
@@ -47,7 +59,14 @@ class Base:
     def from_json_string(json_string):
         """returns the list of the JSON string 
         representation 
-        json_string"""
+        json_string
+
+        Args:
+        json_string (str): A JSON str representation of a list of dicts.
+        Returns:
+        If json_string is None or empty - an empty list.
+        Otherwise - the Python list represented by json_string.
+        """
         if json_string is None or json_string == "[]":
             return []
         else:
@@ -56,7 +75,11 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes 
-        already set"""
+        already set
+
+        Args:
+            **dictionary (dict): Key/value pairs of attributes to initialize.
+            """
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
                 inst = cls(1, 1)
@@ -67,7 +90,13 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """returns a list of instances"""
+        """returns a list of instances
+        Reads from `<cls.__name__>.json`.
+
+        Returns:
+        If the file does not exist - an empty list.
+        Otherwise - a list of instantiated classes.
+        """
         filename = str(cls.__name__) + ".json"
         try:
             with open(filename, "r") as j:
