@@ -12,6 +12,7 @@ class Base:
     """
     __nb_objects = 0
 
+    @classconstructure
     def __init__(self, id=None):
         """class constructor
 
