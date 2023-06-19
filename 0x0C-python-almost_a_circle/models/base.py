@@ -8,10 +8,8 @@ class Base:
 
     Attributes:
     private class attribute:
-    __nb_objects = 0 (int): 
-    the number of instances.
+    __nb_objects = 0 (int): the number of instances.
     """
-    
     __nb_objects = 0
 
     def __init__(self, id=None):
