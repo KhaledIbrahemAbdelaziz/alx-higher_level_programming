@@ -1,9 +1,12 @@
 #!/usr/bin/node
-function fact(i) {
-	if (i === 0 || isNaN(i))
-		return (1);
-	if (i < 0)
-		return (-1);
-	return (i * fact(i - 1));
+function factorial (n) {
+  if (n < 0) {
+    return (-1);
+  }
+  if (n === 0 || isNaN(n)) {
+    return (1);
+  }
+  return (n * factorial(n - 1));
 }
-console.log(fact(Number(process.argv[2])));
+
+console.log(factorial(Number(process.argv[2])));
