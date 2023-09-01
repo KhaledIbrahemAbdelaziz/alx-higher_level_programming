@@ -11,7 +11,7 @@ if __name__ == "__main__":
     url_parsing = {'email' : sys.argv[2]}
     email = urllib.parse.urlencode(url_parsing)
     emails = email.encode('ascii')
-    
+
     req = urllib.request.Request(_Url, emails)
     with urllib.request.urlopen(req) as res:
         data = res.read()
